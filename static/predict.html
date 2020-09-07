@@ -48,7 +48,7 @@
 				image: base64Image
 			}
 			<!-- console.log(message); -->
-			$.post("http://127.0.0.1:5000/predict", JSON.stringify(message),function(response){
+			$.post("https://pose1.herokuapp.com/predict.", JSON.stringify(message),function(response){
 				$("#aa-prediction").text(response.prediction.aa.toFixed(6));
 				$("#Advantage-prediction").text(response.prediction.Advantage.toFixed(6));
 				$("#PointCut-prediction").text(response.prediction.PointCut.toFixed(6));
