@@ -11,7 +11,7 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.mobilenet import preprocess_input
 from flask import request
 from flask import jsonify
-from flask import Flask
+from flask import Flask, render_template
 
 
 
@@ -35,7 +35,9 @@ def preprocess_image(image, target_size):
 print(" * Loading Keras model...")
 get_model()
 
-    
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
